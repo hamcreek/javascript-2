@@ -120,3 +120,77 @@ if(lulusUjian && lulusAbsen){
 }else{
     console.log('TIDAK WISUDA')
 }
+
+const wisuda3 = lulusUjian && lulusAbsen ? 'WISUDA' : lulusUjian || lulusAbsen ? 'WISUDA SANTAI' : 'TIDAK WISUDA'
+console.log('HASIL WISUDA : ', wisuda3)
+
+const foods = [
+    {
+        dataId: 1,
+        rasa: 'Manis',
+        warna: 'Merah',
+        bentuk: 'bulat'
+    },
+
+    {
+        dataId: 2,
+        rasa: 'Asam',
+        warna: 'Kuning',
+        bentuk: 'Kotak'
+    },
+
+    {
+        dataId: 3,
+        rasa: 'Pedas',
+        warna: 'Merah',
+        bentuk: 'Panjang'
+    }
+]
+
+foods.forEach(food => {
+    for(let value in food){
+        console.log(`${food[value]}`)
+    }
+})
+
+
+//FUNCTION
+//DECLARATION
+
+function login(nama, email, password){
+    document.writeln(`Nama: ${nama}, Email: ${email}, Password: ${password}`)
+}
+login('Dwi', 'dw.pamungkas@gmail.com', '1234')
+
+//SAMPEL REAL LOGIN FUNCTION
+function login(name, email, password) {
+    if (!name || !email || !password) {
+        console.log("All fields are required.");
+        return;
+    }
+
+    const userData = { name, email, password };
+
+    fetch('https://your-api-endpoint.com/login', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(userData)
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            console.log("Login successful!");
+            // Handle successful login
+        } else {
+            console.log("Login failed: " + data.message);
+        }
+    })
+    .catch(error => {
+        console.error("An error occurred during login:", error);
+    });
+}
+
+// Usage
+login("John Doe", "test@example.com", "password123");
