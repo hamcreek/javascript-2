@@ -194,3 +194,8 @@ function login(name, email, password) {
 
 // Usage
 login("John Doe", "test@example.com", "password123");
+
+//EXPRESSION
+const report = function(lulusUjian, lulusAbsen){
+    
+}
